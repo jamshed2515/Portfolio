@@ -1,0 +1,1791 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Md Jamshed Alam | Portfolio</title>
+  <meta name="description"
+    content="Portfolio of Md Jamshed Alam — full stack developer (MERN + PHP/MySQL). Projects, skills, certificates, and contact." />
+  <meta name="color-scheme" content="dark" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css" />
+  <style>
+    /* --- COMPACT FULLPAGE VIEWPORT OVERRIDES --- */
+    .section,
+    .hero,
+    #about {
+      padding: 2rem 0 !important;
+      /* increased padding to prevent edges from overlapping */
+      min-height: 100vh !important;
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: center !important;
+      box-sizing: border-box;
+    }
+
+    /* Removed empty .container ruleset */
+    .section-title {
+      margin-bottom: 0.8rem !important;
+    }
+
+    .section-title h2 {
+      font-size: 1.6rem !important;
+      margin-bottom: 0 !important;
+    }
+
+    .section-subtitle {
+      margin-top: 0.3rem !important;
+      font-size: 0.9rem !important;
+      margin-bottom: 0.6rem !important;
+    }
+
+    .hero-name {
+      font-size: 2.4rem !important;
+    }
+
+    .hero-title {
+      font-size: 1.5rem !important;
+      margin-bottom: 0.8rem !important;
+    }
+
+    .brand-text {
+      font-size: 1.25rem !important;
+    }
+
+    .skills-cards {
+      gap: 0.8rem !important;
+      margin-top: 0.8rem !important;
+      grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    }
+
+    .project-grid {
+      gap: 1rem !important;
+      grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    }
+
+    .cert-grid {
+      gap: 1rem !important;
+    }
+
+    .achievements-list {
+      gap: 0.8rem !important;
+    }
+
+    .resume-panels {
+      margin-top: 0.6rem !important;
+    }
+
+    .card {
+      padding: 0.85rem 1rem !important;
+    }
+
+    .skill-card {
+      padding: 0.6rem 0.8rem 1.4rem !important;
+      position: relative !important;
+    }
+
+    .skill-main {
+      gap: 0.6rem !important;
+      margin-bottom: 0.4rem !important;
+    }
+
+    .skill-icon {
+      width: 32px !important;
+      height: 32px !important;
+      border-radius: 6px !important;
+    }
+
+    .skill-name {
+      font-size: 0.9rem !important;
+      font-weight: 500 !important;
+    }
+
+    .skill-percent {
+      font-size: 0.8rem !important;
+      margin-left: auto;
+      font-weight: 500 !important;
+    }
+
+    .skill-meta {
+      position: absolute !important;
+      bottom: 0.4rem !important;
+      right: 0.8rem !important;
+      font-size: 0.65rem !important;
+      opacity: 0.7 !important;
+    }
+
+    .skill-bar {
+      height: 4px !important;
+      border-radius: 2px !important;
+    }
+
+    .filter-pill.is-active {
+      background: #6366f1 !important;
+      color: white !important;
+    }
+
+    .project-card {
+      padding: 0 !important;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-card .project-body {
+      padding: 1.2rem !important;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-card h3 {
+      font-size: 1.15rem !important;
+      margin-bottom: 0.4rem !important;
+    }
+
+    .project-card p {
+      font-size: 0.85rem !important;
+      line-height: 1.4 !important;
+      margin-bottom: 0.8rem !important;
+      color: #9ca3af;
+    }
+
+    .project-img-container {
+      position: relative;
+      width: 100%;
+      height: 180px;
+      overflow: hidden;
+    }
+
+    .project-img-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      border-radius: 8px 8px 0 0;
+    }
+
+    .project-badge {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: #6366f1;
+      color: white;
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 0.7rem;
+      font-weight: 600;
+    }
+
+    .project-overlay-tags {
+      position: absolute;
+      bottom: 12px;
+      left: 12px;
+      display: flex;
+      gap: 6px;
+    }
+
+    .overlay-tag {
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(4px);
+      color: #e5e7eb;
+      font-size: 0.65rem;
+      padding: 4px 10px;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      font-weight: 500;
+    }
+
+    .project-body .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: auto;
+    }
+
+    .project-body .tag-row .tag {
+      background: rgba(255, 255, 255, 0.05);
+      color: #9ca3af;
+      font-size: 0.75rem !important;
+      padding: 4px 8px !important;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .project-actions {
+      display: flex;
+      gap: 10px;
+      margin-top: 1rem;
+      width: 100%;
+      flex-direction: row !important;
+    }
+
+    .project-actions .btn {
+      flex: 1;
+      text-align: center;
+      padding: 0.6rem 0 !important;
+      font-size: 0.85rem !important;
+      border-radius: 6px;
+      display: block;
+    }
+
+    .btn-ghost {
+      background: transparent !important;
+      border: 1px solid rgba(255, 255, 255, 0.15) !important;
+      color: #e5e7eb !important;
+      text-decoration: none;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .btn-ghost:hover {
+      background: rgba(255, 255, 255, 0.05) !important;
+    }
+
+    .resume-card {
+      padding: 0.8rem 1rem !important;
+      margin-bottom: 0.8rem !important;
+    }
+
+    .resume-nav {
+      margin: 0.6rem 0 !important;
+    }
+
+    .resume-nav-btn {
+      padding: 0.5rem 1rem !important;
+      font-size: 0.9rem !important;
+    }
+
+    .resume-card-header h3 {
+      font-size: 1.05rem !important;
+      margin: 0 0 0.3rem !important;
+    }
+
+    .resume-badge {
+      padding: 0.2rem 0.5rem !important;
+      font-size: 0.75rem !important;
+      margin-bottom: 0.3rem !important;
+    }
+
+    .resume-card p {
+      font-size: 0.85rem !important;
+      line-height: 1.4 !important;
+      margin: 0 !important;
+    }
+
+    .resume-date {
+      font-size: 0.85rem !important;
+    }
+
+    .resume-top-bar {
+      margin-bottom: 0.6rem !important;
+      font-size: 0.9rem !important;
+      gap: 1rem !important;
+    }
+
+    .resume-contact-pill {
+      padding: 0.3rem 0.8rem !important;
+      font-size: 0.85rem !important;
+      gap: 0.4rem !important;
+    }
+
+    .resume-download {
+      margin-top: 0.6rem !important;
+    }
+
+    .resume-download .btn {
+      padding: 0.5rem 1.2rem !important;
+      font-size: 0.9rem !important;
+    }
+
+    .cert-card {
+      padding: 0 !important;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      background: rgba(255, 255, 255, 0.03) !important;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .cert-thumb {
+      position: relative;
+      width: 100%;
+      height: 180px;
+      overflow: hidden;
+      border-radius: 8px 8px 0 0;
+    }
+
+    .cert-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .cert-tag {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: #6366f1;
+      color: white;
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      z-index: 2;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    }
+
+    .cert-date {
+      position: absolute;
+      bottom: 12px;
+      right: 12px;
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 500;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9);
+      z-index: 2;
+    }
+
+    .cert-body {
+      padding: 1.2rem !important;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .cert-body h3 {
+      font-size: 1.05rem !important;
+      margin-bottom: 0.6rem !important;
+      color: #e5e7eb;
+    }
+
+    .cert-body p {
+      font-size: 0.85rem !important;
+      line-height: 1.4 !important;
+      color: #9ca3af;
+      flex: 1;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .cert-meta-bottom {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 1.2rem;
+      font-size: 0.8rem;
+      color: #9ca3af;
+      align-items: center;
+    }
+
+    .cert-meta-bottom span:last-child {
+      color: #60a5fa;
+      font-weight: 500;
+    }
+
+    .cert-footer {
+      padding: 0.8rem 1.2rem !important;
+      font-size: 0.75rem !important;
+      color: #9ca3af !important;
+      text-align: center;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      background: rgba(0, 0, 0, 0.2) !important;
+    }
+
+    .achievement-card {
+      padding: 1.2rem 1.5rem !important;
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      background: rgba(255, 255, 255, 0.03) !important;
+      border: 1px solid rgba(255, 255, 255, 0.05) !important;
+      flex-direction: row !important;
+    }
+
+    .achievement-icon {
+      width: 44px;
+      height: 44px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+      margin-bottom: 0 !important;
+    }
+
+    .achievement-text {
+      flex: 1;
+      text-align: left;
+    }
+
+    .achievement-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.3rem;
+    }
+
+    .achievement-header h3 {
+      font-size: 1.05rem !important;
+      margin: 0 !important;
+      color: #e5e7eb;
+    }
+
+    .achievement-date {
+      font-size: 0.8rem !important;
+      color: #a855f7 !important;
+      font-weight: 500;
+    }
+
+    .achievement-text p {
+      font-size: 0.85rem !important;
+      color: #9ca3af;
+      line-height: 1.4 !important;
+      margin: 0 !important;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 1.5rem;
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+      align-items: start;
+    }
+
+    .contact-panel {
+      background: rgba(255, 255, 255, 0.03) !important;
+      border: 1px solid rgba(255, 255, 255, 0.05) !important;
+      border-radius: 8px;
+      padding: 1.5rem !important;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .contact-form label {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .contact-form label span {
+      font-size: 0.85rem !important;
+      color: #e5e7eb;
+      font-weight: 500;
+      margin-bottom: 0.3rem;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      padding: 0.7rem !important;
+      font-size: 0.85rem !important;
+      background: rgba(0, 0, 0, 0.2) !important;
+      border: 1px solid rgba(255, 255, 255, 0.1) !important;
+      border-radius: 6px;
+      color: #fff;
+    }
+
+    .contact-form textarea {
+      min-height: 100px !important;
+      resize: none;
+    }
+
+    .contact-form .btn-primary {
+      width: 100%;
+      margin-top: 0.5rem;
+      background: #6366f1 !important;
+      padding: 0.8rem !important;
+      font-weight: 600;
+      border-radius: 6px;
+      border: none;
+      color: white !important;
+    }
+
+    .contact-info h3 {
+      font-size: 1.1rem !important;
+      color: #e5e7eb;
+      margin-bottom: 1.2rem !important;
+    }
+
+    .contact-info-list {
+      list-style: none;
+      padding: 0 !important;
+      margin: 0 !important;
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem !important;
+    }
+
+    .contact-info-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .contact-icon-circle {
+      width: 36px;
+      height: 36px;
+      background: rgba(99, 102, 241, 0.15) !important;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+
+    .contact-info-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .contact-info-label {
+      font-size: 0.75rem !important;
+      color: #9ca3af;
+      margin-bottom: 0.1rem;
+    }
+
+    .contact-info-value,
+    .contact-info-value a {
+      font-size: 0.85rem !important;
+      color: #d1d5db;
+      text-decoration: none;
+      word-break: break-all;
+    }
+
+    .contact-divider {
+      border: 0;
+      height: 1px;
+      background: rgba(255, 255, 255, 0.05);
+      margin: 1.5rem 0 !important;
+    }
+
+    .follow-me-text {
+      font-size: 0.8rem;
+      color: #9ca3af;
+      margin-bottom: 0.8rem;
+    }
+
+    .social-circles {
+      display: flex;
+      gap: 0.6rem;
+    }
+
+    .social-circle {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: #374151;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 0.8rem;
+      text-decoration: none;
+      transition: 0.2s;
+    }
+
+    .social-circle:hover {
+      background: #6366f1;
+    }
+
+    .contact-bottom-banner {
+      background: rgba(255, 255, 255, 0.03) !important;
+      border: 1px solid rgba(255, 255, 255, 0.05) !important;
+      border-radius: 8px;
+      padding: 1.2rem !important;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #e5e7eb;
+      margin: 1.5rem auto 0;
+      width: 100%;
+      max-width: 900px;
+    }
+
+    .filter-row {
+      margin-bottom: 1rem !important;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      justify-content: center;
+    }
+
+    .filter-pill {
+      padding: 0.4rem 1rem !important;
+      font-size: 0.85rem !important;
+    }
+
+    /* Target deep lists */
+    .bullets {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .bullets li {
+      font-size: 0.82rem !important;
+      margin-bottom: 0.3rem !important;
+      position: relative;
+      padding-left: 1rem;
+      line-height: 1.4 !important;
+    }
+
+    .bullets li:before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #60a5fa;
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="Go to top">
+        <span class="brand-text"><span class="text-gradient">JA</span> Portfolio</span>
+      </a>
+
+      <nav class="nav" aria-label="Primary">
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" data-nav-toggle>
+          <span class="nav-toggle-lines" aria-hidden="true"></span>
+          <span class="sr-only">Menu</span>
+        </button>
+
+        <div class="nav-links" id="nav-links" data-nav-links>
+          <a class="nav-link is-active" href="#home">Home</a>
+          <a class="nav-link" href="#resume">Resume</a>
+          <a class="nav-link" href="#skills">Skills</a>
+          <a class="nav-link" href="#projects">Projects</a>
+          <a class="nav-link" href="#certifications">Certifications</a>
+          <a class="nav-link" href="#achievements">Achievements</a>
+          <a class="nav-link" href="#contact">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Hero / Home -->
+    <section class="hero" id="home">
+      <div class="container hero-center">
+        <div class="hero-avatar-wrap">
+          <img class="hero-avatar" src="./assets/profile.jpeg" alt="Portrait of Md Jamshed Alam"
+            onerror="this.classList.add('is-missing');" />
+        </div>
+        <h1 class="hero-name">Md Jamshed Alam</h1>
+        <div class="hero-role-row">
+          <p class="hero-role">Full Stack Developer</p>
+          <span class="hero-role-sep" aria-hidden="true"></span>
+        </div>
+        <p class="hero-intro">
+          Welcome to my digital playground! I craft elegant solutions through code, turning ideas into
+          immersive digital experiences that solve real-world problems.
+        </p>
+
+        <div class="hero-chip-row">
+          <span class="pill">Java</span>
+          <span class="pill">Python</span>
+          <span class="pill">React</span>
+          <span class="pill">JavaScript</span>
+          <span class="pill">Node.js</span>
+          <span class="pill">MongoDB</span>
+          <span class="pill">CSS</span>
+        </div>
+
+        <div class="hero-buttons">
+          <a class="btn btn-primary" href="#projects">View My Work</a>
+          <a class="btn btn-ghost" href="#contact">Contact Me</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-title">
+          <h2>About Me</h2>
+          <div class="section-underline"></div>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-left">
+            <article class="card about-card">
+              <h3>Quick Facts</h3>
+              <ul class="facts-list">
+                <li>
+                  <span class="fact-icon">📍</span>
+                  <span class="fact-text">
+                    <span class="fact-label">Location</span>
+                    <span class="fact-value">Dhanbad, Jharkhand, India</span>
+                  </span>
+                </li>
+                <li>
+                  <span class="fact-icon">🎓</span>
+                  <span class="fact-text">
+                    <span class="fact-label">Education</span>
+                    <span class="fact-value">B.Tech CSE · LPU (CGPA 8.1)</span>
+                  </span>
+                </li>
+                <li>
+                  <span class="fact-icon">💼</span>
+                  <span class="fact-text">
+                    <span class="fact-label">Experience</span>
+                    <span class="fact-value">Full Stack Developer</span>
+                  </span>
+                </li>
+              </ul>
+            </article>
+
+            <article class="card about-card">
+              <h3>When I'm Not Coding</h3>
+              <ul class="hobbies-list">
+                <li class="hobby-item">
+                  <span class="hobby-icon">💻</span>
+                  <span class="hobby-name">Surfing Web</span>
+                </li>
+                <li class="hobby-item">
+                  <span class="hobby-icon">📚</span>
+                  <span class="hobby-name">Reading</span>
+                </li>
+                <li class="hobby-item">
+                  <span class="hobby-icon">🎵</span>
+                  <span class="hobby-name">Music</span>
+                </li>
+              </ul>
+            </article>
+          </div>
+
+          <div class="about-right">
+            <article class="card about-card right-card">
+              <h3 class="card-title-blue">My Journey</h3>
+              <p>
+                Hello! I'm <span class="text-purple">Md Jamshed Alam</span>, a passionate full-stack developer with a
+                deep
+                fascination for transforming complex problems into elegant web applications.
+              </p>
+              <p>
+                My journey in tech began with curious exploration and has evolved into building real-world solutions
+                like a Carbon Footprint Tracker and a Blood Bank Management platform. I specialize in crafting
+                responsive, user-centered applications using React, Node.js, PHP, MongoDB, and MySQL.
+              </p>
+              <p>
+                What drives me is finding that perfect balance between functional code and intuitive design. I'm
+                constantly expanding my skills through hands-on projects, participating in hackathons like HackVerse,
+                and practicing DSA on LeetCode.
+              </p>
+            </article>
+
+            <article class="card about-card right-card">
+              <h3 class="card-title-blue">My Approach</h3>
+              <p>
+                I believe in creating technology that's not just functional but deeply meaningful. Every line of code I
+                write
+                aims to solve real problems and deliver excellent user experiences. I value clean architecture,
+                maintainable
+                code bases, and continuous learning as the core foundations of great software.
+              </p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Resume -->
+    <section class="section" id="resume">
+      <div class="container">
+        <div class="section-title">
+          <h2>My Resume</h2>
+          <div class="section-underline"></div>
+        </div>
+
+        <div class="resume-top-bar">
+          <span class="resume-contact-pill">
+            <span class="resume-contact-icon">✉️</span>
+            <span>mdjamshedalam807@gmail.com</span>
+          </span>
+          <span class="resume-contact-pill">
+            <span class="resume-contact-icon">📞</span>
+            <span>+91 6207638763</span>
+          </span>
+          <a class="resume-contact-pill" href="https://www.linkedin.com/in/ajamshed69/" target="_blank"
+            rel="noreferrer">
+            <span class="resume-contact-icon">in</span>
+            <span>LinkedIn</span>
+          </a>
+          <a class="resume-contact-pill" href="https://github.com/jamshed2515" target="_blank" rel="noreferrer">
+            <span class="resume-contact-icon">🐱</span>
+            <span>GitHub</span>
+          </a>
+        </div>
+
+        <div class="resume-nav" data-resume-nav>
+          <button class="resume-nav-btn is-active" type="button" data-resume-tab="education">
+            Education
+          </button>
+          <button class="resume-nav-btn" type="button" data-resume-tab="skills">Skills</button>
+          <button class="resume-nav-btn" type="button" data-resume-tab="projects">Projects</button>
+          <button class="resume-nav-btn" type="button" data-resume-tab="extracurricular">
+            Extracurricular
+          </button>
+          <button class="resume-nav-btn" type="button" data-resume-tab="certificates">
+            Certificates
+          </button>
+        </div>
+
+        <div class="resume-panels">
+          <div class="resume-panel is-active" data-resume-panel="education">
+            <article class="resume-card">
+              <div class="resume-card-header">
+                <div>
+                  <div class="resume-badge">Current</div>
+                  <h3>Lovely Professional University</h3>
+                  <p class="resume-subtitle">B.Tech in Computer Science and Engineering</p>
+                </div>
+                <div class="resume-date">Aug 2023 – Present</div>
+              </div>
+              <p class="muted">CGPA: 8.1</p>
+            </article>
+
+            <article class="resume-card">
+              <div class="resume-card-header">
+                <div>
+                  <div class="resume-badge">Intermediate</div>
+                  <h3>Saraswati Shishu Mandir, Dhanbad</h3>
+                  <p class="resume-subtitle">PCM</p>
+                </div>
+                <div class="resume-date">Mar 2021 – May 2023</div>
+              </div>
+              <p class="muted">Percentage: 81%</p>
+            </article>
+
+            <article class="resume-card">
+              <div class="resume-card-header">
+                <div>
+                  <div class="resume-badge">Matriculation</div>
+                  <h3>Kako Hill School, Dhanbad</h3>
+                </div>
+                <div class="resume-date">Mar 2020 – May 2021</div>
+              </div>
+              <p class="muted">Percentage: 81%</p>
+            </article>
+          </div>
+
+          <div class="resume-panel" data-resume-panel="skills">
+            <article class="resume-card">
+              <div class="resume-card-header">
+                <div>
+                  <div class="resume-badge">Core</div>
+                  <h3>Languages & CS Fundamentals</h3>
+                </div>
+              </div>
+              <p class="muted">
+                C++, Java, Python, JavaScript, solid understanding of data structures and algorithms
+                (200+ LeetCode problems).
+              </p>
+            </article>
+            <article class="resume-card">
+              <div class="resume-card-header">
+                <div>
+                  <div class="resume-badge">Full Stack</div>
+                  <h3>Web Technologies</h3>
+                </div>
+              </div>
+              <p class="muted">
+                React, HTML, CSS, Tailwind, Node.js, Express, PHP, MongoDB, MySQL, Git — the same stack used
+                in my featured projects.
+              </p>
+            </article>
+          </div>
+
+          <div class="resume-panel" data-resume-panel="projects">
+            <article class="resume-card">
+              <div class="resume-card-header">
+                <div>
+                  <div class="resume-badge">Full Stack</div>
+                  <h3>Carbon Footprint Tracker</h3>
+                </div>
+              </div>
+              <p class="muted">
+                MERN application that lets users log daily activities, calculate carbon emissions, and
+                understand their impact over time.
+              </p>
+              <ul class="bullets">
+                <li>Implemented secure authentication and per-user data storage.</li>
+                <li>Built interactive dashboards using React and Chart.js.</li>
+                <li>Designed MongoDB schemas for efficient aggregation and queries.</li>
+              </ul>
+            </article>
+
+            <article class="resume-card">
+              <div class="resume-card-header">
+                <div>
+                  <div class="resume-badge">PHP/MySQL</div>
+                  <h3>Blood Donor &amp; Bank Management</h3>
+                </div>
+              </div>
+              <p class="muted">
+                Web-based system to manage donors, blood stock, and donor–receiver matching, replacing
+                manual spreadsheets.
+              </p>
+              <ul class="bullets">
+                <li>Created role-based access for admins and staff.</li>
+                <li>Optimized queries for faster search and retrieval.</li>
+                <li>Improved data integrity with structured MySQL relations.</li>
+              </ul>
+            </article>
+
+            <article class="resume-card">
+              <div class="resume-card-header">
+                <div>
+                  <div class="resume-badge">Ongoing</div>
+                  <h3>Bright Future Academy</h3>
+                </div>
+              </div>
+              <p class="muted">
+                Responsive school website to digitize academic operations, student registration, and
+                communication.
+              </p>
+              <ul class="bullets">
+                <li>Building modules for students, teachers, and notices.</li>
+                <li>Integrating PHP/MySQL backend for secure data handling.</li>
+                <li>Focusing on simple, clear interfaces for non-technical users.</li>
+              </ul>
+            </article>
+          </div>
+
+          <div class="resume-panel" data-resume-panel="extracurricular">
+            <article class="resume-card">
+              <div class="resume-card-header">
+                <div>
+                  <div class="resume-badge">Training</div>
+                  <h3>Full Stack Web Development</h3>
+                  <p class="resume-subtitle">Cipher Schools (Edtech Company)</p>
+                </div>
+                <div class="resume-date">Jun 2025 – Jul 2025</div>
+              </div>
+              <ul class="bullets">
+                <li>Built dynamic and responsive web applications using HTML, CSS, JavaScript, and React.</li>
+                <li>Developed REST APIs using Node.js and Express.js.</li>
+                <li>Worked with MongoDB and MySQL for database design and management.</li>
+              </ul>
+            </article>
+
+            <article class="resume-card">
+              <div class="resume-card-header">
+                <div>
+                  <div class="resume-badge">Hackathon</div>
+                  <h3>HackVerse 2024</h3>
+                  <p class="resume-subtitle">National-level 24-hour hackathon</p>
+                </div>
+                <div class="resume-date">Mar 2024</div>
+              </div>
+              <p class="muted">
+                Qualified Round 2 while collaborating on a functional prototype under time constraints,
+                focusing on turning ideas into working features quickly.
+              </p>
+            </article>
+          </div>
+
+          <div class="resume-panel" data-resume-panel="certificates">
+            <a href="./assets/Fundamentals of Network Communication.pdf" target="_blank"
+              style="text-decoration: none; color: inherit; display: contents;">
+              <article class="resume-card">
+                <div class="resume-card-header">
+                  <div>
+                    <div class="resume-badge">Coursera</div>
+                    <h3>Fundamentals of Network Communication</h3>
+                  </div>
+                  <div class="resume-date">Sep 2024</div>
+                </div>
+              </article>
+            </a>
+
+            <a href="./assets/The Bits and Bytes of Computer Networking.pdf" target="_blank"
+              style="text-decoration: none; color: inherit; display: contents;">
+              <article class="resume-card">
+                <div class="resume-card-header">
+                  <div>
+                    <div class="resume-badge">Coursera</div>
+                    <h3>The Bits and Bytes of Computer Networking</h3>
+                  </div>
+                  <div class="resume-date">Sep 2024</div>
+                </div>
+              </article>
+            </a>
+
+            <a href="./assets/Build Generative AI Apps and Solutions with No-Code Tools.pdf" target="_blank"
+              style="text-decoration: none; color: inherit; display: contents;">
+              <article class="resume-card">
+                <div class="resume-card-header">
+                  <div>
+                    <div class="resume-badge">Certificate</div>
+                    <h3>Build Generative AI Apps and Solutions with No-Code Tools</h3>
+                  </div>
+                  <div class="resume-date">2024</div>
+                </div>
+              </article>
+            </a>
+
+            <a href="./assets/ChatGPT-4 Prompt Engineering ChatGPT, Generative AI & LLM.pdf" target="_blank"
+              style="text-decoration: none; color: inherit; display: contents;">
+              <article class="resume-card">
+                <div class="resume-card-header">
+                  <div>
+                    <div class="resume-badge">Certificate</div>
+                    <h3>ChatGPT-4 Prompt Engineering</h3>
+                  </div>
+                  <div class="resume-date">2024</div>
+                </div>
+              </article>
+            </a>
+
+            <a href="./assets/Computational Theory Language Principle & Finite Automata Theory.pdf" target="_blank"
+              style="text-decoration: none; color: inherit; display: contents;">
+              <article class="resume-card">
+                <div class="resume-card-header">
+                  <div>
+                    <div class="resume-badge">Certificate</div>
+                    <h3>Computational Theory Language Principle & Finite Automata Theory</h3>
+                  </div>
+                  <div class="resume-date">2024</div>
+                </div>
+              </article>
+            </a>
+
+            <a href="./assets/Master Generative AI & Generative AI tools (ChatGPT & more).pdf" target="_blank"
+              style="text-decoration: none; color: inherit; display: contents;">
+              <article class="resume-card">
+                <div class="resume-card-header">
+                  <div>
+                    <div class="resume-badge">Certificate</div>
+                    <h3>Master Generative AI & Generative AI tools</h3>
+                  </div>
+                  <div class="resume-date">2024</div>
+                </div>
+              </article>
+            </a>
+
+            <article class="resume-card">
+              <div class="resume-card-header">
+                <div>
+                  <div class="resume-badge">CSE Pathshala</div>
+                  <h3>Mastering in C</h3>
+                </div>
+                <div class="resume-date">Mar 2024</div>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="resume-download">
+          <a class="btn btn-primary" href="./assets/JamshedCV-12324904.pdf" target="_blank" rel="noreferrer">
+            Download Resume
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section class="section" id="skills">
+      <div class="container">
+        <div class="section-title">
+          <h2 class="text-gradient">Technical Arsenal</h2>
+          <div class="section-underline"></div>
+          <p class="section-subtitle">
+            A showcase of technologies I've mastered on my journey as a developer.
+          </p>
+        </div>
+
+        <div class="filter-row" data-skill-filters>
+          <button class="filter-pill is-active" data-skill-filter="all">All Skills</button>
+          <button class="filter-pill" data-skill-filter="lang">ProgrammingLanguages</button>
+          <button class="filter-pill" data-skill-filter="frontend">Frontend</button>
+          <button class="filter-pill" data-skill-filter="backend">Backend</button>
+          <button class="filter-pill" data-skill-filter="db">Databases</button>
+          <button class="filter-pill" data-skill-filter="tools">Tools</button>
+        </div>
+
+        <div class="skills-cards" data-skill-grid>
+          <article class="skill-card" data-skill-category="lang">
+            <div class="skill-main">
+              <div class="skill-left">
+                <div class="skill-icon skill-icon--c"><span class="sr-only">C logo</span></div>
+                <div class="skill-text">
+                  <div class="skill-name">C</div>
+                  <div class="skill-meta">ProgrammingLanguages</div>
+                </div>
+              </div>
+              <div class="skill-percent">70%</div>
+            </div>
+            <div class="skill-bar"></div>
+          </article>
+
+          <article class="skill-card" data-skill-category="lang">
+            <div class="skill-main">
+              <div class="skill-left">
+                <div class="skill-icon skill-icon--cpp"><span class="sr-only">C++ logo</span></div>
+                <div class="skill-text">
+                  <div class="skill-name">C++</div>
+                  <div class="skill-meta">ProgrammingLanguages</div>
+                </div>
+              </div>
+              <div class="skill-percent">80%</div>
+            </div>
+            <div class="skill-bar"></div>
+          </article>
+
+          <article class="skill-card" data-skill-category="lang">
+            <div class="skill-main">
+              <div class="skill-left">
+                <div class="skill-icon skill-icon--python"><span class="sr-only">Python logo</span></div>
+                <div class="skill-text">
+                  <div class="skill-name">Python</div>
+                  <div class="skill-meta">ProgrammingLanguages</div>
+                </div>
+              </div>
+              <div class="skill-percent">75%</div>
+            </div>
+            <div class="skill-bar"></div>
+          </article>
+
+          <article class="skill-card" data-skill-category="lang">
+            <div class="skill-main">
+              <div class="skill-left">
+                <div class="skill-icon skill-icon--java"><span class="sr-only">Java logo</span></div>
+                <div class="skill-text">
+                  <div class="skill-name">Java</div>
+                  <div class="skill-meta">ProgrammingLanguages</div>
+                </div>
+              </div>
+              <div class="skill-percent">80%</div>
+            </div>
+            <div class="skill-bar"></div>
+          </article>
+
+          <article class="skill-card" data-skill-category="frontend">
+            <div class="skill-main">
+              <div class="skill-left">
+                <div class="skill-icon skill-icon--react"><span class="sr-only">React logo</span></div>
+                <div class="skill-text">
+                  <div class="skill-name">React</div>
+                  <div class="skill-meta">Frontend</div>
+                </div>
+              </div>
+              <div class="skill-percent">80%</div>
+            </div>
+            <div class="skill-bar"></div>
+          </article>
+
+          <article class="skill-card" data-skill-category="frontend">
+            <div class="skill-main">
+              <div class="skill-left">
+                <div class="skill-icon skill-icon--html"><span class="sr-only">HTML logo</span></div>
+                <div class="skill-text">
+                  <div class="skill-name">HTML</div>
+                  <div class="skill-meta">Frontend</div>
+                </div>
+              </div>
+              <div class="skill-percent">95%</div>
+            </div>
+            <div class="skill-bar"></div>
+          </article>
+
+          <article class="skill-card" data-skill-category="frontend">
+            <div class="skill-main">
+              <div class="skill-left">
+                <div class="skill-icon skill-icon--css"><span class="sr-only">CSS logo</span></div>
+                <div class="skill-text">
+                  <div class="skill-name">CSS / Tailwind</div>
+                  <div class="skill-meta">Frontend</div>
+                </div>
+              </div>
+              <div class="skill-percent">85%</div>
+            </div>
+            <div class="skill-bar"></div>
+          </article>
+
+          <article class="skill-card" data-skill-category="backend">
+            <div class="skill-main">
+              <div class="skill-left">
+                <div class="skill-icon skill-icon--node"><span class="sr-only">Node.js logo</span></div>
+                <div class="skill-text">
+                  <div class="skill-name">Node.js</div>
+                  <div class="skill-meta">Backend</div>
+                </div>
+              </div>
+              <div class="skill-percent">80%</div>
+            </div>
+            <div class="skill-bar"></div>
+          </article>
+
+          <article class="skill-card" data-skill-category="backend">
+            <div class="skill-main">
+              <div class="skill-left">
+                <div class="skill-icon skill-icon--express"><span class="sr-only">Express logo</span></div>
+                <div class="skill-text">
+                  <div class="skill-name">Express.js</div>
+                  <div class="skill-meta">Backend</div>
+                </div>
+              </div>
+              <div class="skill-percent">75%</div>
+            </div>
+            <div class="skill-bar"></div>
+          </article>
+
+          <article class="skill-card" data-skill-category="backend">
+            <div class="skill-main">
+              <div class="skill-left">
+                <div class="skill-icon skill-icon--php"><span class="sr-only">PHP logo</span></div>
+                <div class="skill-text">
+                  <div class="skill-name">PHP</div>
+                  <div class="skill-meta">Backend</div>
+                </div>
+              </div>
+              <div class="skill-percent">80%</div>
+            </div>
+            <div class="skill-bar"></div>
+          </article>
+
+          <article class="skill-card" data-skill-category="backend">
+            <div class="skill-main">
+              <div class="skill-left">
+                <div class="skill-icon skill-icon--laravel"><span class="sr-only">Laravel logo</span></div>
+                <div class="skill-text">
+                  <div class="skill-name">Laravel</div>
+                  <div class="skill-meta">Backend</div>
+                </div>
+              </div>
+              <div class="skill-percent">70%</div>
+            </div>
+            <div class="skill-bar"></div>
+          </article>
+
+          <article class="skill-card" data-skill-category="backend">
+            <div class="skill-main">
+              <div class="skill-left">
+                <div class="skill-icon skill-icon--spring"><span class="sr-only">Spring logo</span></div>
+                <div class="skill-text">
+                  <div class="skill-name">Spring</div>
+                  <div class="skill-meta">Backend</div>
+                </div>
+              </div>
+              <div class="skill-percent">65%</div>
+            </div>
+            <div class="skill-bar"></div>
+          </article>
+
+          <article class="skill-card" data-skill-category="db">
+            <div class="skill-main">
+              <div class="skill-left">
+                <div class="skill-icon skill-icon--mongo"><span class="sr-only">MongoDB logo</span></div>
+                <div class="skill-text">
+                  <div class="skill-name">MongoDB</div>
+                  <div class="skill-meta">Databases</div>
+                </div>
+              </div>
+              <div class="skill-percent">80%</div>
+            </div>
+            <div class="skill-bar"></div>
+          </article>
+
+          <article class="skill-card" data-skill-category="db">
+            <div class="skill-main">
+              <div class="skill-left">
+                <div class="skill-icon skill-icon--mysql"><span class="sr-only">MySQL logo</span></div>
+                <div class="skill-text">
+                  <div class="skill-name">MySQL</div>
+                  <div class="skill-meta">Databases</div>
+                </div>
+              </div>
+              <div class="skill-percent">85%</div>
+            </div>
+            <div class="skill-bar"></div>
+          </article>
+
+          <article class="skill-card" data-skill-category="tools">
+            <div class="skill-main">
+              <div class="skill-left">
+                <div class="skill-icon skill-icon--git"><span class="sr-only">Git logo</span></div>
+                <div class="skill-text">
+                  <div class="skill-name">Git</div>
+                  <div class="skill-meta">Tools</div>
+                </div>
+              </div>
+              <div class="skill-percent">80%</div>
+            </div>
+            <div class="skill-bar"></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section-title">
+          <h2 class="text-gradient">Featured Projects</h2>
+          <div class="section-underline"></div>
+          <p class="section-subtitle">
+            A showcase of my work spanning web applications, APIs, and responsive interfaces.
+          </p>
+        </div>
+
+        <div class="filter-row">
+          <span class="filter-pill is-active">All Projects</span>
+          <span class="filter-pill">Full Stack</span>
+          <span class="filter-pill">Data Visualization</span>
+          <span class="filter-pill">Frontend</span>
+          <span class="filter-pill">API Integration</span>
+          <span class="filter-pill">Web App</span>
+        </div>
+
+        <div class="project-grid">
+          <article class="project-card">
+            <div class="project-img-container">
+              <img src="./assets/CarbonFootPrintTracker.png" alt="Carbon Footprint Tracker Screenshot" />
+              <span class="project-badge">Featured</span>
+              <div class="project-overlay-tags">
+                <span class="overlay-tag">Full Stack</span>
+                <span class="overlay-tag">Data Visualization</span>
+              </div>
+            </div>
+            <div class="project-body">
+              <h3>Carbon Footprint Tracker</h3>
+              <p>
+                A full-stack web app that lets users log activities, calculate their carbon emissions, and
+                visualize impact through interactive dashboards.
+              </p>
+              <div class="tag-row">
+                <span class="tag">React</span>
+                <span class="tag">Node.js</span>
+                <span class="tag">MongoDB</span>
+                <span class="tag">Chart.js</span>
+              </div>
+              <div class="project-actions">
+                <a class="btn btn-primary btn-sm" href="#" aria-disabled="true" data-disabled-link>
+                  Live Demo
+                </a>
+                <a class="btn btn-ghost btn-sm" href="https://github.com/jamshed2515/CarbonFootPrintTracker"
+                  target="_blank" rel="noreferrer">
+                  Source Code
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-img-container">
+              <img src="./assets/blood-donor-ss.png" alt="Blood Bank Screenshot" />
+              <div class="project-overlay-tags">
+                <span class="overlay-tag">Full Stack</span>
+                <span class="overlay-tag">Frontend</span>
+              </div>
+            </div>
+            <div class="project-body">
+              <h3>Blood Donor &amp; Bank Management</h3>
+              <p>
+                A complete administration portal replacing manual spreadsheets, allowing reliable donor
+                management and real-time blood stock tracking.
+              </p>
+              <div class="tag-row">
+                <span class="tag">PHP</span>
+                <span class="tag">MySQL</span>
+                <span class="tag">JavaScript</span>
+                <span class="tag">Tailwind</span>
+              </div>
+              <div class="project-actions">
+                <a class="btn btn-primary btn-sm" href="#" aria-disabled="true" data-disabled-link>
+                  Live Demo
+                </a>
+                <a class="btn btn-ghost btn-sm" href="https://github.com/jamshed2515/LiForce" target="_blank"
+                  rel="noreferrer">
+                  Source Code
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-img-container">
+              <img src="./assets/BrightFutureAcademy.png" alt="Bright Future Academy Screenshot" />
+              <div class="project-overlay-tags">
+                <span class="overlay-tag">Frontend</span>
+                <span class="overlay-tag">API Integration</span>
+              </div>
+            </div>
+            <div class="project-body">
+              <h3>Bright Future Academy</h3>
+              <p>
+                An intuitive educational platform aiming to streamline school administration with seamless
+                modules linking teachers and students together.
+              </p>
+              <div class="tag-row">
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+                <span class="tag">PHP</span>
+                <span class="tag">MySQL</span>
+              </div>
+              <div class="project-actions">
+                <a class="btn btn-primary btn-sm" href="#" aria-disabled="true" data-disabled-link>
+                  Live Demo
+                </a>
+                <a class="btn btn-ghost btn-sm" href="https://github.com/jamshed2515/BrigthFutureAcademy"
+                  target="_blank" rel="noreferrer">
+                  Source Code
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-img-container">
+              <img src="./assets/lumina.png" alt="Lumina Mental Health Support System" />
+              <div class="project-overlay-tags">
+                <span class="overlay-tag">Full Stack</span>
+                <span class="overlay-tag">Web App</span>
+              </div>
+            </div>
+            <div class="project-body">
+              <h3>Lumina Mental Health Support System</h3>
+              <p>
+                A dedicated platform built for higher education to provide mental health resources, anonymous
+                support tracking, and direct counseling integration.
+              </p>
+              <div class="tag-row">
+                <span class="tag">React</span>
+                <span class="tag">Node.js</span>
+                <span class="tag">Express</span>
+                <span class="tag">MongoDB</span>
+              </div>
+              <div class="project-actions">
+                <a class="btn btn-primary btn-sm"
+                  href="https://lumina-7jai-git-main-md-jamshed-alams-projects.vercel.app/" target="_blank"
+                  rel="noreferrer">
+                  Live Demo
+                </a>
+                <a class="btn btn-ghost btn-sm" href="https://github.com/Retik29/Lumina" target="_blank"
+                  rel="noreferrer">
+                  Source Code
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Certifications -->
+    <section class="section" id="certifications">
+      <div class="container">
+        <div class="section-title">
+          <h2 class="text-gradient">Certifications</h2>
+          <div class="section-underline"></div>
+          <p class="section-subtitle">
+            Professional credentials that validate my technical expertise and continuous learning journey.
+          </p>
+        </div>
+
+        <div class="cert-grid">
+          <article class="cert-card">
+            <a href="./assets/Fundamentals of Network Communication.pdf" target="_blank"
+              style="text-decoration: none; color: inherit; display: contents;">
+              <div class="cert-thumb">
+                <img src="./assets/Fundamentals of Network Communication.png"
+                  alt="Fundamentals of Network Communication" />
+                <span class="cert-tag">Coursera</span>
+                <span class="cert-date">Sep 2024</span>
+              </div>
+              <div class="cert-body">
+                <h3>Fundamentals of Network Communication</h3>
+                <p>Certification demonstrating mastery of basic computer networking concepts and protocols.</p>
+                <div class="cert-meta-bottom">
+                  <span>Coursera</span>
+                  <span>Sep 2024</span>
+                </div>
+              </div>
+              <div class="cert-footer">Click to view details</div>
+            </a>
+          </article>
+
+          <article class="cert-card">
+            <a href="./assets/The Bits and Bytes of Computer Networking.pdf" target="_blank"
+              style="text-decoration: none; color: inherit; display: contents;">
+              <div class="cert-thumb">
+                <img src="./assets/The Bits and Bytes of Computer Networking.png"
+                  alt="The Bits and Bytes of Computer Networking" />
+                <span class="cert-tag">Coursera</span>
+                <span class="cert-date">Sep 2024</span>
+              </div>
+              <div class="cert-body">
+                <h3>The Bits and Bytes of Computer Networking</h3>
+                <p>Advanced practical understanding of networking architecture and implementation.</p>
+                <div class="cert-meta-bottom">
+                  <span>Coursera</span>
+                  <span>Sep 2024</span>
+                </div>
+              </div>
+              <div class="cert-footer">Click to view details</div>
+            </a>
+          </article>
+
+          <article class="cert-card">
+            <a href="./assets/Build Generative AI Apps and Solutions with No-Code Tools.pdf" target="_blank"
+              style="text-decoration: none; color: inherit; display: contents;">
+              <div class="cert-thumb">
+                <img src="./assets/Build Generative AI Apps and Solutions with No-Code Tools.png"
+                  alt="Build Generative AI Apps" />
+                <span class="cert-tag">Infosys</span>
+                <span class="cert-date">2024</span>
+              </div>
+              <div class="cert-body">
+                <h3>Build Generative AI Apps and Solutions</h3>
+                <p>Practical course on building generative AI solutions with low-code tools.</p>
+                <div class="cert-meta-bottom">
+                  <span>Infosys</span>
+                  <span>2024</span>
+                </div>
+              </div>
+              <div class="cert-footer">Click to view details</div>
+            </a>
+          </article>
+
+          <article class="cert-card">
+            <a href="./assets/ChatGPT-4 Prompt Engineering ChatGPT, Generative AI & LLM.pdf" target="_blank"
+              style="text-decoration: none; color: inherit; display: contents;">
+              <div class="cert-thumb">
+                <img src="./assets/ChatGPT-4 Prompt Engineering ChatGPT, Generative AI & LLM.png"
+                  alt="ChatGPT-4 Prompt Engineering" />
+                <span class="cert-tag">Infosys</span>
+                <span class="cert-date">2024</span>
+              </div>
+              <div class="cert-body">
+                <h3>ChatGPT-4 Prompt Engineering</h3>
+                <p>In-depth understanding of prompt design for large language models and generative AI.</p>
+                <div class="cert-meta-bottom">
+                  <span>Infosys</span>
+                  <span>2024</span>
+                </div>
+              </div>
+              <div class="cert-footer">Click to view details</div>
+            </a>
+          </article>
+
+          <article class="cert-card">
+            <a href="./assets/Computational Theory Language Principle & Finite Automata Theory.pdf" target="_blank"
+              style="text-decoration: none; color: inherit; display: contents;">
+              <div class="cert-thumb">
+                <img src="./assets/Computational Theory Language Principle & Finite Automata Theory.png"
+                  alt="Computational Theory" />
+                <span class="cert-tag">Infosys</span>
+                <span class="cert-date">2024</span>
+              </div>
+              <div class="cert-body">
+                <h3>Computational Theory Language Principle</h3>
+                <p>Academic certification covering the advanced language principles and automaton operations.</p>
+                <div class="cert-meta-bottom">
+                  <span>Infosys</span>
+                  <span>2024</span>
+                </div>
+              </div>
+              <div class="cert-footer">Click to view details</div>
+            </a>
+          </article>
+
+          <article class="cert-card">
+            <a href="./assets/Master Generative AI & Generative AI tools (ChatGPT & more).pdf" target="_blank"
+              style="text-decoration: none; color: inherit; display: contents;">
+              <div class="cert-thumb">
+                <img src="./assets/Master Generative AI & Generative AI tools (ChatGPT & more).png"
+                  alt="Master Generative AI" />
+                <span class="cert-tag">Infosys</span>
+                <span class="cert-date">2024</span>
+              </div>
+              <div class="cert-body">
+                <h3>Master Generative AI</h3>
+                <p>Mastery of modern generative AI workflows and implementation utilizing ChatGPT and more.</p>
+                <div class="cert-meta-bottom">
+                  <span>Infosys</span>
+                  <span>2024</span>
+                </div>
+              </div>
+              <div class="cert-footer">Click to view details</div>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Achievements -->
+    <section class="section" id="achievements">
+      <div class="container">
+        <div class="section-title">
+          <h2 class="text-gradient">Achievements</h2>
+          <div class="section-underline"></div>
+        </div>
+
+        <div class="achievements-list">
+          <article class="achievement-card">
+            <div class="achievement-icon">🔥</div>
+            <div class="achievement-text">
+              <div class="achievement-header">
+                <h3>50-Day Streak on LeetCode</h3>
+                <span class="achievement-date">April 2025</span>
+              </div>
+              <p>
+                Maintained a 50-day daily problem-solving streak on LeetCode, showcasing consistency and dedication.
+              </p>
+            </div>
+          </article>
+
+          <article class="achievement-card">
+            <div class="achievement-icon">💡</div>
+            <div class="achievement-text">
+              <div class="achievement-header">
+                <h3>150 LeetCode Questions Solved</h3>
+                <span class="achievement-date">April 2025</span>
+              </div>
+              <p>
+                Solved 150 coding questions on LeetCode in April 2025, strengthening problem-solving and algorithmic
+                thinking.
+              </p>
+            </div>
+          </article>
+
+          <article class="achievement-card">
+            <div class="achievement-icon">⭐</div>
+            <div class="achievement-text">
+              <div class="achievement-header">
+                <h3>Acquired 3-Star on HackerRank</h3>
+                <span class="achievement-date">Recent</span>
+              </div>
+              <p>
+                Achieved a 3-star rating on HackerRank in problem-solving, demonstrating strong logical and coding
+                skills.
+              </p>
+            </div>
+          </article>
+
+          <article class="achievement-card">
+            <div class="achievement-icon">💻</div>
+            <div class="achievement-text">
+              <div class="achievement-header">
+                <h3>Built 6+ Full-Stack Projects</h3>
+                <span class="achievement-date">Ongoing</span>
+              </div>
+              <p>
+                Successfully developed and deployed over 6 full-stack web applications, showcasing end-to-end
+                development expertise.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section contact" id="contact">
+      <div class="container">
+        <div class="section-title">
+          <h2 class="text-gradient">Get In Touch</h2>
+          <div class="section-underline"></div>
+          <p class="section-subtitle">
+            Have a question or want to work together? Fill out the form below or reach out directly through
+            my contact information.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-panel">
+            <form class="contact-form" action="mailto:mdjamshedalam807@gmail.com" method="post" enctype="text/plain">
+              <label>
+                <span>Name</span>
+                <input name="name" type="text" placeholder="Your name" autocomplete="name" />
+              </label>
+              <label>
+                <span>Email</span>
+                <input name="email" type="email" placeholder="your.email@example.com" autocomplete="email" />
+              </label>
+              <label>
+                <span>Message</span>
+                <textarea name="message" placeholder="Your message..."></textarea>
+              </label>
+              <button class="btn btn-primary" type="submit">Send Message</button>
+            </form>
+          </div>
+
+          <div class="contact-panel contact-info">
+            <h3>Contact Information</h3>
+            <ul class="contact-info-list">
+              <li class="contact-info-item">
+                <div class="contact-icon-circle">✉️</div>
+                <div class="contact-info-text">
+                  <span class="contact-info-label">Email</span>
+                  <span class="contact-info-value">mdjamshedalam807@gmail.com</span>
+                </div>
+              </li>
+              <li class="contact-info-item">
+                <div class="contact-icon-circle">📱</div>
+                <div class="contact-info-text">
+                  <span class="contact-info-label">Phone</span>
+                  <span class="contact-info-value">+91-XXXXXXXXXX</span>
+                </div>
+              </li>
+              <li class="contact-info-item">
+                <div class="contact-icon-circle">🔗</div>
+                <div class="contact-info-text">
+                  <span class="contact-info-label">LinkedIn</span>
+                  <span class="contact-info-value">
+                    <a href="https://www.linkedin.com/in/ajamshed69/" target="_blank" rel="noreferrer">
+                      linkedin.com/in/ajamshed69
+                    </a>
+                  </span>
+                </div>
+              </li>
+              <li class="contact-info-item">
+                <div class="contact-icon-circle">🐱</div>
+                <div class="contact-info-text">
+                  <span class="contact-info-label">GitHub</span>
+                  <span class="contact-info-value">
+                    <a href="https://github.com/jamshed2515" target="_blank" rel="noreferrer">
+                      github.com/jamshed2515
+                    </a>
+                  </span>
+                </div>
+              </li>
+            </ul>
+            <hr class="contact-divider" />
+            <div class="follow-me-text">Follow Me</div>
+            <div class="social-circles">
+              <a href="#" class="social-circle">T</a>
+              <a href="#" class="social-circle">I</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-bottom-banner">
+          Looking forward to hearing from you!
+        </div>
+      </div>
+    </section>
+  </main>
+
+
+  <script src="./script.js"></script>
+</body>
+
+</html>
